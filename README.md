@@ -178,7 +178,7 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 
 ### Manual Dependency List
 
-If `requirements.txt` don't work, install the main dependencies manually:
+If `requirements.txt` does not work, install the main dependencies manually:
 
 ```bash
 python -m pip install numpy pandas scipy rasterio torch torchvision torchmetrics segmentation-models-pytorch ttach

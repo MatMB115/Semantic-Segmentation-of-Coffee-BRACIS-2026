@@ -19,15 +19,27 @@ Two multispectral satellite data sources were considered in the experiments:
 * **PlanetScope**, with higher spatial resolution and finer field-level spatial detail;
 * **Sentinel-2**, with lower spatial resolution but broader public availability and spectral consistency.
 
+Aqui está o trecho formatado com as citações no padrão Markdown (`>`), ideal para destacar no seu `README.md` ou documentação do GitHub:
+
 ## Evaluated Models
 
 Three semantic segmentation architectures were evaluated:
 
 * **UNet++**, a convolutional encoder-decoder architecture with nested skip connections designed to improve multiscale feature fusion.
+
+> Zhou, Z., Siddiquee, M. M. R., Tajbakhsh, N., & Liang, J. (2019). Unet++: Redesigning skip connections to exploit multiscale features in image segmentation. *IEEE Transactions on Medical Imaging*, 39(6), 1856-1867.
+
 * **MANet**, a convolutional segmentation model that incorporates attention mechanisms for contextual feature refinement.
+
+> Li, R., Zheng, S., Zhang, C., Duan, C., Su, J., Wang, L., & Atkinson, P. M. (2021). Multiattention network for semantic segmentation of fine-resolution remote sensing images. *IEEE Transactions on Geoscience and Remote Sensing*, 60, 1-13.
+
 * **SegFormer**, a transformer-based segmentation architecture with a hierarchical encoder and lightweight decoder. In this study, SegFormer was evaluated with a MiT-B2 encoder.
 
-The convolutional models used ResNet-based encoders.
+> Xie, E., Wang, W., Yu, Z., Anandkumar, A., Alvarez, J. M., & Luo, P. (2021). SegFormer: Simple and efficient design for semantic segmentation with transformers. *Advances in Neural Information Processing Systems*, 34, 12077-12090.
+
+The convolutional models used ResNet-based encoders, specifically the **ResNet-34** architecture.
+
+>  He, K., Zhang, X., Ren, S., & Sun, J. (2016). Deep residual learning for image recognition. In *Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)*, 770–778.
 
 ## Experimental Phases
 

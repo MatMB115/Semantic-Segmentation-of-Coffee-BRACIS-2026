@@ -18,9 +18,7 @@ Two multispectral satellite data sources were considered in the experiments:
 
 * **PlanetScope**, with higher spatial resolution and finer field-level spatial detail;
 * **Sentinel-2**, with lower spatial resolution but broader public availability and spectral consistency.
-
-Aqui está o trecho formatado com as citações no padrão Markdown (`>`), ideal para destacar no seu `README.md` ou documentação do GitHub:
-
+  
 ## Evaluated Models
 
 Three semantic segmentation architectures were evaluated:

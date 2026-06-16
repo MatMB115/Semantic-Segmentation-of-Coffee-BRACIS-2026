@@ -94,7 +94,11 @@ Main files:
 
 ## Supplementary Materials
 
-The datasets, trained weights, prediction outputs, split metadata, and experimental result tables are archived in Zenodo.
+The datasets, trained weights, prediction outputs, split metadata, and experimental result tables are archived in Zenodo:
+
+https://doi.org/10.5281/zenodo.20722135
+
+The Zenodo record should be used for citation because it contains the archived version of the supplementary materials associated with the paper.
 
 ## Installation
 

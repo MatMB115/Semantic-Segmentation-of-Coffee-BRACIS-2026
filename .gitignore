@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.python-version
+.venv/
+venv/
+env/
+ENV/
+
+# Tooling and notebooks
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environment files
+.env
+.env.*
+
+# Datasets and generated experiment outputs
+data/
+dataset/
+datasets/
+.dataset/
+.datasets/
+results/
+.results/
+outputs/
+predictions/
+pred_masks/
+
+# Model checkpoints and tensor artifacts
+*.ckpt
+*.pth
+*.pt
+*.onnx
+*.npy
+*.npz
+
+# Remote-sensing rasters and masks
+*.tif
+*.tiff
+
+# Generated tables and reports
+*.csv
+*.tsv
+*.xlsx
+*.xls
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z

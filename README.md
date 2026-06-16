@@ -1,8 +1,76 @@
 # Coffee Field Segmentation Under Spatial Generalization
 
+<p align="center">
+  <img src="https://bracis.sbc.org.br/2026/wp-content/uploads/2026/01/logo_transparente-2048x960.png" alt="BRACIS 2026" height="90">
+  <img src="https://iei.unifei.edu.br/wp-content/uploads/2022/04/simbolo_RGB.png" alt="UNIFEI" height="90">
+  <img src="https://www.letras.ufmg.br/padrao_cms/imagens/eventos/icones/fapemig.png" alt="FAPEMIG" height="90">
+</p>
+
 Source code and example notebook for the BRACIS 2026 paper **“Semantic Segmentation of Coffee Fields Under Spatial Generalization: An Ablation Study with PlanetScope and Sentinel-2”**.
 
-This repository provides the code used for single-model inference, ensemble evaluation, and statistical analysis in a semantic segmentation study of coffee fields using multispectral remote sensing imagery. The experiments compare PlanetScope and Sentinel-2 data under a municipality-level spatial generalization protocol.
+This repository provides the code used for single-model inference, ensemble evaluation, and statistical analysis associated with the experiments reported in the paper.
+
+## Study Context
+
+This repository supports a coffee field semantic segmentation study conducted in the Campo das Vertentes Geographical Indication (IGCV) region, Minas Gerais, Brazil. The goal of the study was to evaluate how different modeling choices affect coffee field segmentation when models are tested under spatial generalization, using a municipality-level hold-out protocol.
+
+Two multispectral satellite data sources were considered in the experiments:
+
+* **PlanetScope**, with higher spatial resolution and finer field-level spatial detail;
+* **Sentinel-2**, with lower spatial resolution but broader public availability and spectral consistency.
+
+## Evaluated Models
+
+Three semantic segmentation architectures were evaluated:
+
+* **UNet++**, a convolutional encoder-decoder architecture with nested skip connections designed to improve multiscale feature fusion.
+* **MANet**, a convolutional segmentation model that incorporates attention mechanisms for contextual feature refinement.
+* **SegFormer**, a transformer-based segmentation architecture with a hierarchical encoder and lightweight decoder. In this study, SegFormer was evaluated with a MiT-B2 encoder.
+
+The convolutional models used ResNet-based encoders.
+
+## Experimental Phases
+
+The experiments were organized into four sequential phases:
+
+### Phase 1: Loss Function Comparison
+
+The first phase compared two loss functions commonly used in imbalanced segmentation tasks:
+
+* **Dice Loss**
+* **Tversky Loss**
+
+### Phase 2: Patch Size Comparison
+
+The second phase evaluated the effect of input patch size using different spatial dimensions:
+
+* **128 × 128 pixels**
+* **256 × 256 pixels**
+* **512 × 512 pixels**
+
+### Phase 3: Vegetation Index Comparison
+
+The third phase evaluated the contribution of handcrafted vegetation indices added as extra input channels. The tested indices were:
+
+* **EVI**: Enhanced Vegetation Index
+* **GNDVI**: Green Normalized Difference Vegetation Index
+* **NDRE**: Normalized Difference Red Edge Index
+
+### Phase 4: Ensemble With Test-Time Augmentation
+
+The fourth phase evaluated heterogeneous model combination through soft-voting ensemble inference with test-time augmentation. The ensemble averaged predicted class probabilities from selected trained models, using spatial transformations during inference to improve prediction stability.
+
+## Evaluation and Statistical Analysis
+
+Model performance was evaluated using standard segmentation metrics, including:
+
+* **Precision**
+* **Recall**
+* **F1 score**
+* **Intersection over Union (IoU)**
+
+The reported analyses distinguish between dataset-level metrics and per-sample metrics. Statistical comparisons were performed using non-parametric tests over per-sample IoU distributions, including Friedman and Wilcoxon tests with p-value adjustment when applicable.
+
 
 ## Repository Contents
 
@@ -26,15 +94,7 @@ Main files:
 
 ## Supplementary Materials
 
-The datasets, trained weights, prediction outputs, split metadata, and experimental result tables are archived in Zenodo:
-
-```text
-https://doi.org/10.5281/zenodo.20722135
-```
-
-The Zenodo record should be used for citation because it contains the archived version of the supplementary materials associated with the paper.
-
-PlanetScope imagery is not redistributed due to licensing restrictions. Sentinel-2 patches, rasterized masks, trained weights, split metadata, and experimental outputs are provided in the Zenodo record according to the licensing terms described there.
+The datasets, trained weights, prediction outputs, split metadata, and experimental result tables are archived in Zenodo.
 
 ## Installation
 
@@ -58,7 +118,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-### Arch Linux
+### Arch
 
 Install Python and GDAL from the official repositories:
 

@@ -1,0 +1,32 @@
+{
+  "alpha": 0.05,
+  "phases": {
+    "s2_p1_paired_iou": {
+      "metric": "iou",
+      "design": "paired",
+      "models": {
+        "unetpp_resnet34": "results/reproduced/S2/P1_UNETPP/per_image_metrics.csv",
+        "segformer_mit_b2": "results/reproduced/S2/P1_SEGFORMER/per_image_metrics.csv",
+        "manet_resnet34": "results/reproduced/S2/P1_MANET/per_image_metrics.csv"
+      },
+      "tests": {
+        "friedman": true,
+        "wilcoxon": true,
+        "p_adjustment": "holm",
+        "run_pairwise_if_global_not_significant": false
+      }
+    },
+    "planet_vs_s2_independent_f1": {
+      "metric": "f1",
+      "design": "independent",
+      "models": {
+        "planet_best": "results/reproduced/PLANET/P1_BEST/per_image_metrics.csv",
+        "s2_best": "results/reproduced/S2/P1_BEST/per_image_metrics.csv"
+      },
+      "tests": {
+        "mann_whitney": true,
+        "p_adjustment": "none"
+      }
+    }
+  }
+}

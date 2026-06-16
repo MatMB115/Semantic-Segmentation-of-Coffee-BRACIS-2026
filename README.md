@@ -2,8 +2,8 @@
 
 <p align="center">
   <img src="https://bracis.sbc.org.br/2026/wp-content/uploads/2026/01/logo_transparente-2048x960.png" alt="BRACIS 2026" height="90">
-  <img src="https://iei.unifei.edu.br/wp-content/uploads/2022/04/simbolo_RGB.png" alt="UNIFEI" height="90">
-  <img src="https://www.letras.ufmg.br/padrao_cms/imagens/eventos/icones/fapemig.png" alt="FAPEMIG" height="90">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/UNIFEI.png/960px-UNIFEI.png" alt="UNIFEI" height="90">
+  <img src="https://eventmanager.galoa.com.br/sites/default/files/sponsors-logo/images/fapemig%20%281%29.png" alt="FAPEMIG" height="120">
 </p>
 
 Source code and example notebook for the BRACIS 2026 paper **“Semantic Segmentation of Coffee Fields Under Spatial Generalization: An Ablation Study with PlanetScope and Sentinel-2”**.

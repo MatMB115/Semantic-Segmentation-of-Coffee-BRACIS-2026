@@ -63,7 +63,7 @@ ARCHITECTURES = {
             "decoder_attention_type": None,
         },
     },
-    "segformer_mit_b0": {
+    "segformer_mit_b2": {
         "cls": smp.Segformer,
         "kwargs": {
             "encoder_name": "mit_b2",
